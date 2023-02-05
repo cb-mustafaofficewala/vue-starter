@@ -7,14 +7,14 @@
                 native-value="Admin">
                 <span>Admin</span>
             </b-checkbox>
-            <p class="has-text-grey">
+            <p class="has-text-grey" style="padding-left:5.5%">
                 Access everything in Chargebee
             </p>
             <b-checkbox v-model="role" name="Role"
                 native-value="Tech Support">
                 Tech Support
             </b-checkbox>
-            <p class="has-text-grey">
+            <p class="has-text-grey"  style="padding-left:5.5%">
                 User can view "Subscriptions"
                 and "Product Catalog" tabs.
                 Can also view, add comments to, send,
@@ -24,7 +24,7 @@
                 native-value="Analyst">
                 Analyst
             </b-checkbox>
-            <p class="has-text-grey">
+            <p class="has-text-grey"  style="padding-left:5.5%">
                 In addition to Tech Support level access,
                 user will have access to the SaaS metrics report.
             </p>
@@ -32,7 +32,10 @@
     </section>
 </template>
 <script lang="ts">
-import { Vue, Component, Watch } from 'vue-property-decorator';
+
+import {
+  Vue, Component, Watch, Prop,
+} from 'vue-property-decorator';
 import { mapActions } from 'vuex';
 
 @Component({
@@ -41,7 +44,15 @@ import { mapActions } from 'vuex';
   },
 })
 export default class RoleSelector extends Vue {
+    @Prop() readonly preselectedRoles!: Array<string>;
+
     role = Array<string>();
+
+    mounted() {
+      if (this.preselectedRoles) {
+        this.role = this.preselectedRoles;
+      }
+    }
 
     setRoleAction!: (role: Array<string>) => void;
 

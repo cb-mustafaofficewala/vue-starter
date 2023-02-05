@@ -3,8 +3,8 @@
         <div class="card-content">
             <div class="content" style="padding-right:5vw;">
                 <div class="columns">
-                    <svg fill="orange" width="1.5rem" height="1.5rem" viewBox="0 0 416.979 416.979"
-                    style="margin-top: 2vh;">
+                    <svg fill="#fc6100" width="1.5rem" height="1.5rem" viewBox="0 0 416.979 416.979"
+                    style="margin-top: 2vh;margin-left: 2vw;">
                         <g>
                             <path
                             d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,
@@ -22,9 +22,9 @@
                     </svg>
                     <div class="column">
                     <div
-                    style="padding-right:5vw;padding-left:2vw;">
+                    style="padding-right:1vw;padding-left:2vw;padding-bottom: 3vh;">
                         <p class="title is-5">
-                            {{ member['email'] }} will not be able to access<br/> this site
+                            {{ member['email'] }} will not be able to<br/>access this site
                         </p>
                     </div>
                     <div class="is-pulled-right">
@@ -35,6 +35,7 @@
                         </b-button>
                         <b-button
                         type="button is-warning"
+                        style="background-color:#fc6100"
                         @click="removeMember">
                             Remove Member
                         </b-button>

@@ -8,7 +8,7 @@
                     style="padding-right:5vw;padding-left:2vw;">
                         <p class="title is-5">Change role for {{ member['email'] }}</p>
                         <section>
-                            <RoleSelector></RoleSelector>
+                            <RoleSelector :preselectedRoles="member.roles"></RoleSelector>
                         </section>
                     </div>
                     <div class="column">

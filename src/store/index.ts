@@ -16,16 +16,16 @@ export default new Vuex.Store({
   },
   mutations: {
     addMember: (state: {members: any, role: Array<string>}, member: any) => {
-      state.members[member.email] = member;
+      Vue.set(state.members, member.email, member);
     },
     updateMember: (
       state: {members: any, role: Array<string>},
       member: any,
     ) => {
-      state.members[member.email] = member;
+      Vue.set(state.members, member.email, member);
     },
     removeMember: (state: {members: any, role: Array<string>}, member: any) => {
-      delete state.members[member.email];
+      Vue.delete(state.members, member.email);
     },
     setRole: (state: {members: any, role: Array<string>}, role: Array<string>) => {
       state.role = role;
